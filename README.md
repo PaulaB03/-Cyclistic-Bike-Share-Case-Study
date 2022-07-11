@@ -7,6 +7,7 @@
 - [Processing data](#Processing-data)
 - [Analyze phaze](#Analize-phaze)
 - [Bibliography](#Bibliography)
+- [Data visualization](#Data-visualization)
 
 ## Scenario
 
@@ -33,7 +34,7 @@ To understand the difference between annual members and casual riders we’ll cr
 
 We are ready to import the data to R. We'll save every month spreadsheet in 12 variables and then we'll merge them all into a single variable.
 
-```
+```r
 tripdata_2021_06 = read_csv("trip_data/202106-divvy-tripdata.csv")
 ```
 
@@ -41,7 +42,7 @@ tripdata_2021_06 = read_csv("trip_data/202106-divvy-tripdata.csv")
 
 We can combine the latitude and longitude columns into a single column.
 
-```
+```r
 tidydata_2021_06 %>% 
   unite(start_lng_lat, c(start_lng, start_lat), sep="-") %>% 
   unite(end_lng_lat, c(end_lng, end_lat), sep="-")
@@ -50,13 +51,13 @@ tidydata_2021_06 %>%
 After analyzing the data with **glimpse** we discover that *ride_length* doesn't have consistent type over the variables. 
 To solve this problem we'll turn *ride_length* from chr/time to duration.
 
-```
+```r
 tripdata_2021_06$ride_length = as.duration(hms(tripdata_2021_06$ride_length))
 ```
 
 The data is ready to merge, so we'll do that then.
 
-```
+```r
 tripdata = bind_rows(tripdata_2021_06,
                      tripdata_2021_07,
                      tripdata_2021_08,
@@ -73,7 +74,7 @@ tripdata = bind_rows(tripdata_2021_06,
 
 Now we'll run some syntaxes to find information about the data.
 
-```
+```r
 # Number of trips per weekday over the year
 tripdata %>% 
   group_by(day_of_week) %>% 
@@ -101,6 +102,15 @@ tripdata %>%
             max_ride = max(ride_length,na.rm=T))
 ```
 
+## Data visualization
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/avg_trips_per_day.png">
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/number_trips_pie.png">
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/trips_per_month.png">
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/trips_per_weekday.png">
 
 ## Bibliography
 
