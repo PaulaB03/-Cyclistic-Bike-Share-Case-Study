@@ -6,8 +6,8 @@
 - [Cleaning data](#Cleaning-data)
 - [Processing data](#Processing-data)
 - [Analyze phaze](#Analize-phaze)
-- [Bibliography](#Bibliography)
 - [Data visualization](#Data-visualization)
+- [Bibliography](#Bibliography)
 
 ## Scenario
 
@@ -104,13 +104,17 @@ tripdata %>%
 
 ## Data visualization
 
-<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/avg_trips_per_day.png">
-
 <img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/number_trips_pie.png">
 
-<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/trips_per_month.png">
+The data shows that on average members have more trips than casual riders, but they tend ride for a shorter duration.
 
 <img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/trips_per_weekday.png">
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/avg_trips_per_day.png">
+
+At the sametime it seems that less people are willing to ride the bike on the cold season.
+
+<img src="https://github.com/PaulaB03/-Cyclistic-Bike-Share-Case-Study/blob/master/trips_per_month.png">
 
 ## Bibliography
 
